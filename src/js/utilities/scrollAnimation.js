@@ -1,30 +1,32 @@
 'use strict'
+import { ANIMATION_START_POSITION } from './constants.js'
 
 const animItems = document.querySelectorAll('.anim-item')
 
 const offset = el => {
-   const rect = el.getBoundingClientRect(),
-      scrollTop = window.pageYOffset || document.documentElement.scrollTop,
-      scrollLeft = window.pageXOffset || document.documentElement.scrollLeft
+   const rect = el.getBoundingClientRect()
+   const scrollTop = window.pageYOffset || document.documentElement.scrollTop
+   const itemOffset = rect.top + scrollTop
 
-   return { top: rect.top + scrollTop, left: rect.left + scrollLeft }
+   return itemOffset
 }
 
 export const scrollAnimation = () => {
    animItems.forEach(item => {
-      const animStart = 2.5,
-         itemHeight = item.offsetHeight,
-         itemOffset = offset(item).top
+      const itemHeight = item.offsetHeight
+      const itemOffset = offset(item)
+      const screenHeight = window.innerHeight
 
-      let itemPoint = innerHeight - itemHeight / animStart
+      let itemPoint = screenHeight - itemHeight / ANIMATION_START_POSITION
+      let isItemVisible = scrollY > itemOffset - itemPoint
 
-      itemHeight > innerHeight ? (itemPoint = innerHeight - innerHeight / animStart) : ''
-
-      scrollY > itemOffset - itemPoint && scrollX < itemOffset + itemHeight
-         ? item.classList.add('show-up')
-         : !item.classList.contains('once')
-         ? item.classList.remove('show-up')
-         : ''
+      if (isItemVisible) {
+         item.classList.add('show-up')
+      } else {
+         if (!item.classList.contains('once')) {
+            item.classList.remove('show-up')
+         }
+      }
    })
 }
 

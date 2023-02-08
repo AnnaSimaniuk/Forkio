@@ -1,7 +1,7 @@
 .pricing {
-   background: url(../img/pricing/pricing-bg.jpg);
+   background: url(../img/pricing/pricing-bg.webp);
    background-repeat: no-repeat;
-   background-position: center 88%;
+   background-position: center 76%;
    background-size: cover;
    &__container {
       padding-top: 80px;
@@ -33,7 +33,7 @@
       display: grid;
       grid-template: repeat(auto-fit, minmax(560px, 1fr)) / repeat(auto-fit, minmax(299px, 1fr));
 
-      @media (max-width: 1239px) {
+      @media (max-width: 1255px) {
          column-gap: 10px;
          grid-template-rows: repeat(auto-fit, minmax(auto, 1fr));
          grid-template-columns: repeat(auto-fit, minmax(257px, auto));
@@ -60,9 +60,13 @@
    text-transform: uppercase;
    transition: all 0.4s ease-out;
    background-color: color(background, $opacity: 'lighter');
+
    &__wrapper {
-      align-self: center;
       justify-self: center;
+      @include flexProperties(center);
+      @media (mix-width: 1140px) {
+         min-height: 560px;
+      }
    }
 
    &__title {
@@ -71,7 +75,7 @@
       transition: inherit;
       @include fontPropertiesFull(null, 24, 24, null);
 
-      @media (min-width: 1240px) {
+      @media (min-width: 1255px) {
          .offer-item:hover & {
             padding: 44px 30px;
             background-color: #463048;
@@ -85,7 +89,7 @@
       padding-bottom: 37px;
       transition: inherit;
 
-      @media (min-width: 1240px) {
+      @media (min-width: 1255px) {
          .offer-item:hover & {
             padding: 10px 0px 46px;
             background-color: rgba(70, 48, 72, 0.84);
@@ -101,18 +105,19 @@
       span {
          font-weight: 700;
       }
-      @media (min-width: 1240px) {
+      @media (min-width: 1255px) {
          .offer-item:hover & {
             font-size: 82px;
          }
       }
    }
+
    &__date {
       margin-bottom: 79px;
       transition: inherit;
       @include fontPropertiesFull(null, 14, 16, null);
 
-      @media (min-width: 1240px) {
+      @media (min-width: 1255px) {
          .offer-item:hover & {
             margin: 14px 0px 99px;
          }
@@ -124,7 +129,7 @@
          background-color: color(background, 'accent');
          @include absolute(46%, 50%, 60px, 5px);
 
-         @media (min-width: 1240px) {
+         @media (min-width: 1255px) {
             .offer-item:hover & {
                top: 40%;
                transform: translate(-50%, -40%);
@@ -139,7 +144,7 @@
       text-transform: none;
       transition: inherit;
 
-      @media (min-width: 1240px) {
+      @media (min-width: 1255px) {
          .offer-item:hover & {
             margin-bottom: 82px;
          }
@@ -155,7 +160,7 @@
       background-color: color(background, $opacity: 'normal');
       @include fontPropertiesFull(null, 15, 15, null);
 
-      @media (min-width: 1240px) {
+      @media (min-width: 1255px) {
          .offer-item:hover & {
             padding: 20px 52px;
          }
@@ -165,7 +170,7 @@
          background-color: color(background, 'accent');
       }
    }
-   @media (min-width: 1240px) {
+   @media (min-width: 1255px) {
       &:hover {
          width: 299px;
       }

@@ -1,4 +1,5 @@
 'use strict'
+import { BREAK_POINT } from '../utilities/constants.js'
 
 export const offerItemAnimation = () => {
    const addClassName = () => {
@@ -8,13 +9,19 @@ export const offerItemAnimation = () => {
 
       selectCard.classList.add('select')
       offersContainer.addEventListener('mouseenter', e => {
-         if (window.innerWidth >= 1240 && e.target === offersContainer) selectCard.classList.remove('select')
+         if (window.innerWidth >= BREAK_POINT && e.target === offersContainer) {
+            selectCard.classList.remove('select')
+         }
       })
       offersContainer.addEventListener('mouseleave', e => {
-         if (window.innerWidth >= 1240 && e.target === offersContainer) selectCard.classList.add('select')
+         if (window.innerWidth >= BREAK_POINT && e.target === offersContainer) {
+            selectCard.classList.add('select')
+         }
       })
 
-      if (window.innerWidth <= 1240) selectCard.classList.add('select')
+      if (window.innerWidth <= BREAK_POINT) {
+         selectCard.classList.add('select')
+      }
    }
    addClassName()
    addEventListener('resize', addClassName)

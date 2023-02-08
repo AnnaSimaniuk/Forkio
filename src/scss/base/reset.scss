@@ -37,3 +37,16 @@ body {
    height: 100%;
    width: 100%;
 }
+
+::-webkit-scrollbar {
+   width: 9px;
+}
+
+::-webkit-scrollbar-track {
+   background: #151515;
+}
+
+::-webkit-scrollbar-thumb {
+   border-radius: 4px;
+   background: #4b3e52;
+}
