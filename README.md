@@ -2,8 +2,9 @@
 
 # FORKIO
 
-[**FORKIO**](https://banzay700.github.io/step__FORKIO/) is a pet project written by passionate developers from Ukraine.
+[**FORKIO**](https://annasimaniuk.github.io/Forkio/) is a pet project written by passionate developers from Ukraine.
 
+![FORKIO Preview](https://s11.gifyu.com/images/ScIW7.png)
 ### Developers:
 
 -  [**Anna Simaniuk**](https://github.com/AnnaSimaniuk)
