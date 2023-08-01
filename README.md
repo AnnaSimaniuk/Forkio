@@ -1,5 +1,3 @@
-<span><img src="./dist/img/header/header_logo_hover.png" alt="Forkio logo" align="right" height="50" /></span>
-
 # FORKIO
 
 [**FORKIO**](https://annasimaniuk.github.io/Forkio/) is a pet project written by passionate developers from Ukraine.
